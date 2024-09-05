@@ -26,7 +26,6 @@ public class HibernateConfig {
 
     private final Properties hibernateProperties() {
         Properties hibernateProperties = new Properties();
-        hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect");
         hibernateProperties.setProperty("hibernate.show_sql", "true");
         hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "create"); // Using only for the first time -
                                                                              // Development
@@ -38,7 +37,7 @@ public class HibernateConfig {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();// IoC
         dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         dataSource.setUrl(
-                "jdbc:sqlserver://localhost:1433;databaseName=vivuspring;encrypt=true;trustServerCertificate=true;loginTimeout=30;");
+                "jdbc:sqlserver://localhost:1433;databaseName=vivuspringdb;encrypt=true;trustServerCertificate=true;loginTimeout=30;");
         dataSource.setUsername("sa");
         dataSource.setPassword("abcd@1234");
         return dataSource;
